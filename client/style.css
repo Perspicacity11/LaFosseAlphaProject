@@ -113,7 +113,7 @@ body{
 }
 
 .options #guessCapital{
-    background-color: #ffc107;
+    background-color: #dc3545;
     transition: .2s all ease-in;
 }
 
@@ -122,7 +122,7 @@ body{
 }
 
 .options #guessFlag{
-    background-color: #ffc107;
+    background-color: #28a745;
     transition: .2s all ease-in;
 }
 
