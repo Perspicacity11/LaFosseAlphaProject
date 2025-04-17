@@ -10,10 +10,13 @@
    
 }
 
-.main{
+body{
     background-image: url(./assets/earth-depicted-anime-style.jpg);
     background-repeat:no-repeat;
     background-size:cover;
+}
+
+.main{
     min-height: 100vh;
 }
 
@@ -23,6 +26,11 @@
     border-radius: 15px;
 }
 
+.navbar-brand{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
 .login-heading{
     font-size: 1.5rem;
     margin-bottom: 2rem;
@@ -30,14 +38,95 @@
 }
 
 .start-game{
+    margin-top: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.start-game .description .title{
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #ffc107;
+    text-shadow: 2px 2px 5px black;
+
 }
 
 .start-game .description{
     font-family: "Special Gothic Expanded One", sans-serif;
     font-weight: 400;
     font-size: 1.5rem;
+    line-height: 3rem;
     text-align: center;
+    margin-bottom: 5rem;
 }
+
+.start-game .game{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.options-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 0 2rem ;
+    padding: 2rem;
+}
+.options{
+    display: none;
+}
+
+.dot {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    padding: 2rem;
+    margin: 0 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+.dot h3{
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    font-weight: 400;
+}
+
+.options #guessCountry{
+    background-color: #ffc107;
+    transition: .2s all ease-in;
+}
+
+.options #guessCountry:hover{
+    background-color: #17a2b8;
+}
+
+.options #guessCapital{
+    background-color: #ffc107;
+    transition: .2s all ease-in;
+}
+
+.options #guessCapital:hover{
+    background-color: #17a2b8;
+}
+
+.options #guessFlag{
+    background-color: #ffc107;
+    transition: .2s all ease-in;
+}
+
+.options #guessFlag:hover{
+    background-color: #17a2b8;
+}
+
