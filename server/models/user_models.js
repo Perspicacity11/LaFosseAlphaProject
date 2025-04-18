@@ -39,7 +39,7 @@ class User {
     return newUser;
   }
 
-  async update(data) {
+  async update(data) { //NOTE: when you call this method to update the total_score, it adds the score given in the request to the existing score in the DB, rather than just replacing it
     const { username, email, password, total_score, isAdmin } = data;
 
     const response = await db.query(
