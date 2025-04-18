@@ -45,8 +45,8 @@ async function destroy(req, res) {
     try{
     const id = parseInt(req.params.id)
     const user = await User.getOneById(id)
-    const result = await User.destroy()
-    res.status(200).json(result)
+    const result = await User.destroy(user)
+    res.status(204).json(result)
     } catch(err) {
         res.status(404).json({ error: err.message })
     }
