@@ -7,8 +7,8 @@ class User {
     this.username = username;
     this.email = email;
     this.password = password;
-    this.total_score = 0;
-    this.isAdmin = false;
+    this.total_score = total_score;
+    this.isAdmin = isAdmin;
     this.session_ids = [];
   }
 
@@ -18,7 +18,7 @@ class User {
       throw new Error("No users available.")
     }
 
-    return response.rows.map(g => new Snack(g));
+    return response.rows.map(u => new User(u));
   }
 
   static async getOneById(id) {
