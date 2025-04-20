@@ -211,15 +211,27 @@ section{
     flex-wrap: 30rem;
     text-align: left;
     margin: 0 5rem;
+    color: #fff;
 
 }
+
+.left-section .country-title h3{
+    color: #ffc107;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.left-section .country-title p{
+    color: #fff;
+}
+
+
 
 .game-box .right-section .box{
     flex-wrap: 27rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    /* or any height you want */
     max-width: 1000px;
     margin-top: 2rem;
 }
