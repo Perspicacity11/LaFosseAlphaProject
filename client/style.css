@@ -6,17 +6,24 @@
     box-sizing: border-box;
     outline: none; border: none;
     text-decoration: none;
-    color: var(--black);
-   
 }
 
 body{
-    background-image: url(./assets/earth-depicted-anime-style.jpg);
-    background-repeat:no-repeat;
-    background-size:cover;
+    overflow: hidden;
+    transition: 3s linear !important;
+}
+
+section{
+    padding: 3rem 2rem;
+    margin: 0 auto;
+    max-width: 1500px;
+    text-align: center;
 }
 
 .main{
+    background-image: url("./assets/earth-depicted-anime-style.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
     min-height: 100vh;
 }
 
@@ -24,6 +31,11 @@ body{
     margin-top: 5rem;
     padding: 2rem;
     border-radius: 15px;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
 }
 
 .navbar-brand{
@@ -37,41 +49,86 @@ body{
     text-align: center;
 }
 
-.start-game{
-    margin-top: 4rem;
+.home{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    min-height: 100vh;
 }
 
-.start-game .description .title{
+.home .description .title{
     font-family: "Special Gothic Expanded One", sans-serif;
     font-weight: 400;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
     color: #ffc107;
     text-shadow: 2px 2px 5px black;
 
 }
 
-.start-game .description{
+.home .description{
     font-family: "Special Gothic Expanded One", sans-serif;
     font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 3rem;
+    font-size: 2rem;
+    line-height: 4rem;
     text-align: center;
     margin-bottom: 5rem;
 }
 
-.start-game .game{
+.home .game{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.options-box{
+.start-btn{
+    display: inline-block;
+    margin-top: 1rem;
+    cursor: pointer;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 15px;
+    border: 2px solid #17a2b8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: .2s linear !important;
+   
+}
+
+.start-btn:hover{
+    background-color: #17a2b8;
+    color: #fff;
+    text-decoration: none;
+}
+
+.game-options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(./assets/map-1662957_1280.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    max-width: 100%;
+    gap: 1rem;
+    min-height: 100vh;
+}
+
+.game-options .start-text{
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 5px black;
+}
+
+.options{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,28 +136,27 @@ body{
     margin: 0 2rem ;
     padding: 2rem;
 }
-.options{
-    display: none;
-}
 
 .dot {
-    height: 10rem;
-    width: 10rem;
+    height: 15rem;
+    width: 15rem;
     border-radius: 50%;
     padding: 2rem;
     margin: 0 2rem;
     cursor: pointer;
     display: flex;
     align-items: center;
+    border: 10px;
     justify-content: center;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 0px 0px 8px rgba(255, 255, 255, 0.748); 
   }
 
-.dot h3{
-    font-size: 1.2rem;
+.dot a{
+    font-size: 1.5rem;
     text-align: center;
     color: white;
     font-weight: 400;
+    text-decoration: none;
 }
 
 .options #guessCountry{
@@ -122,11 +178,55 @@ body{
 }
 
 .options #guessFlag{
-    background-color: #28a745;
+    background-color: #007bff;
     transition: .2s all ease-in;
 }
 
 .options #guessFlag:hover{
     background-color: #17a2b8;
+}
+
+.main-country{
+    background-color: darkblue;
+    min-height: 100vh;
+}
+
+.find-country{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.find-country .game-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.game-box .left-section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: 30rem;
+    text-align: left;
+    margin: 0 5rem;
+
+}
+
+.game-box .right-section .box{
+    flex-wrap: 27rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* or any height you want */
+    max-width: 1000px;
+    margin-top: 2rem;
+}
+
+
+.game-box .right-section .box .svg{
+    width: 100%;
+    height: 650px; 
 }
 
