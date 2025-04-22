@@ -7,7 +7,7 @@ const input = document.getElementById("userInput")
 
 let counter = 0
 let countriesFound = []
-
+input.disabled = true;
 
 countryInputForm.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -78,7 +78,7 @@ const startBtn = document.getElementById("start-game");
 const timerEl = document.getElementById("timer");
 // const input = document.getElementById("guess-input");
 // const guessList = document.getElementById("guess-list");
-const scoreDisplay = document.getElementById("score-display");
+// const scoreDisplay = document.getElementById("score-display");
 const finalScore = document.getElementById("final-score");
 
 let timer;
@@ -98,6 +98,7 @@ const europeanCountries = [
 ];
 
 function startGame() {
+  input.disabled = false;
   console.log('STARTING GAME')
   let timeLeft = 60;
   score = 0;
@@ -106,7 +107,7 @@ function startGame() {
   input.disabled = false;
   input.value = "";
   finalScore.textContent = "";
-  scoreDisplay.textContent = "Score: 0";
+  countryCounter.textContent = "Score: 0/45";
   input.focus();
   timerEl.textContent = timeLeft;
 
