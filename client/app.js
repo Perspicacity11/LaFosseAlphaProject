@@ -7,7 +7,6 @@ const guessList = document.getElementById("guess-list");
 const scoreDisplay = document.getElementById("score-display");
 const finalScore = document.getElementById("final-score");
 
-let timeLeft = 60;
 let timer;
 let score = 0;
 let guesses = new Set();
@@ -20,12 +19,12 @@ const europeanCountries = [
   "Sweden", "Norway", "Denmark", "Belgium", "Netherlands", "Austria",
   "Switzerland", "Finland", "Czech Republic", "Hungary", "Ireland",
   "Slovakia", "Croatia", "Romania", "Bulgaria", "Serbia", "Albania", 
-  "Lithuania", "Latvia", "Estonia", "England", "Slovenia", "Luxembourg", "Iceland",
+  "Lithuania", "Latvia", "Estonia", "United Kingdom", "Slovenia", "Luxembourg", "Iceland",
   "Ukraine", "Moldova", "North Macedonia", "Montenegro", "Malta", "Cyprus"
 ];
 
 function startGame() {
-  timeLeft = 60;
+  let timeLeft = 60;
   score = 0;
   guesses.clear();
   guessList.innerHTML = "";
@@ -57,7 +56,8 @@ function endGame() {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       user_id: userId,
-      session_score: score
+      session_score: score,
+      session_type: "country-guess"
     })
   })
   .then(res => res.json())
