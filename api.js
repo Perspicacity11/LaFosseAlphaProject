@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const logger = require('./logger');
 const path = require('path')
+const path = require("path")
 
 const userRouter = require('./server/routes/user_routes');
 const sessionRouter = require('./server/routes/session_routes');
@@ -15,6 +16,10 @@ app.use('/users', userRouter);
 app.use('/sessions', sessionRouter);
 
 app.use(express.static(path.join(__dirname, "client")))
+
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "game.html"));
+// })
 
 app.get("/", (req, res) => {
   res.status(200).json({
