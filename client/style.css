@@ -8,8 +8,25 @@
     text-decoration: none;
 }
 
+*::-webkit-scrollbar{
+    height: .5rem;
+    width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: #E5E4E2;
+}
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
 body{
-    overflow: hidden;
     transition: 3s linear !important;
 }
 
@@ -21,7 +38,7 @@ section{
 }
 
 .main{
-    background-image: url("./assets/earth-depicted-anime-style.jpg");
+    background-image: url("./assets/earth-reducedSize.jpg");
     background-repeat:no-repeat;
     background-size:cover;
     min-height: 100vh;
@@ -187,7 +204,7 @@ section{
 }
 
 .main-country{
-    background-image: url(./assets/76819.jpg);
+    background-image: url(./assets/blue-background.jpg);
     min-height: 100vh;
 }
 
@@ -216,7 +233,7 @@ section{
 }
 
 .left-section .country-title h3{
-    color: #007bff;
+    color: #fb6f92;
     font-size: 2rem;
     font-weight: 600;
 }
@@ -225,20 +242,21 @@ section{
     color: #fff;
 }
 
+.form-box .form-group #userAlert{
+    color: #fff;
+}
 
+.game-box .right-section{
+    flex-wrap: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .game-box .right-section .box{
-    flex-wrap: 27rem;
     display: flex;
     align-items: center;
     justify-content: center;
     max-width: 1000px;
-    margin-top: 2rem;
+    height: 620px;
 }
-
-
-.game-box .right-section .box .svg{
-    width: 100%;
-    height: 650px; 
-}
-
