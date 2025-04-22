@@ -52,7 +52,7 @@ function endGame() {
   finalScore.textContent = `Final Score: ${score}`;
 
   // Send result to backend
-  fetch("/sessions/record", {
+  fetch("/sessions", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

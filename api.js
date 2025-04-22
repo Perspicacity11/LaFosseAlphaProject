@@ -14,11 +14,11 @@ app.use(logger)
 app.use('/users', userRouter);
 app.use('/sessions', sessionRouter);
 
-app.use(express.static(path.join(__dirname, "client")))
+ app.use(express.static(path.join(__dirname, "client")))
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "game.html"));
-})
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public", "game.html"));
+// })
 
 app.get("/", (req, res) => {
   res.status(200).json({
