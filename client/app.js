@@ -85,7 +85,7 @@ const userId = 1;
 function startGame() {
   input.disabled = false;
   console.log('STARTING GAME')
-  let timeLeft = 10;
+  let timeLeft = 60;
   input.disabled = false;
   input.value = "";
   finalScore.textContent = "";
