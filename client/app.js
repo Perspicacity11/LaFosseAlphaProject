@@ -3,6 +3,7 @@ const allPath = document.querySelectorAll(".allPath")
 const svg = document.querySelector(".svg");
 const countryCounter = document.querySelector(".country-counter")
 const userAlert = document.getElementById("userAlert")
+const input = document.getElementById("userInput")
 
 let counter = 0
 let countriesFound = []
@@ -61,7 +62,7 @@ function findCountry(e){
             text.textContent = e.target.userInput.value;
             svg.appendChild(text);
             counter += 1
-            countryCounter.textContent = `Score: 45/${counter}`
+            countryCounter.textContent = `Score: ${counter}/45`
             countriesFound.push(countryName)
         }
     })
@@ -69,14 +70,14 @@ function findCountry(e){
 }
 
 
-// -----------
+// ----------- UNDER THIS LINE IS ANA'S CODE ---------------
 
 //add app.js code in here
 
 const startBtn = document.getElementById("start-game");
 const timerEl = document.getElementById("timer");
-const input = document.getElementById("guess-input");
-const guessList = document.getElementById("guess-list");
+// const input = document.getElementById("guess-input");
+// const guessList = document.getElementById("guess-list");
 const scoreDisplay = document.getElementById("score-display");
 const finalScore = document.getElementById("final-score");
 
@@ -97,10 +98,11 @@ const europeanCountries = [
 ];
 
 function startGame() {
+  console.log('STARTING GAME')
   let timeLeft = 60;
   score = 0;
   guesses.clear();
-  guessList.innerHTML = "";
+  // guessList.innerHTML = "";
   input.disabled = false;
   input.value = "";
   finalScore.textContent = "";
@@ -142,27 +144,27 @@ function endGame() {
   });
 }
 
-input.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    const guess = input.value.trim();
-    input.value = "";
+// input.addEventListener("keydown", (e) => {
+//   if (e.key === "Enter") {
+//     const guess = input.value.trim();
+//     input.value = "";
 
-    if (!guess) return;
+//     if (!guess) return;
 
-    const isValid = europeanCountries.some(
-      country => country.toLowerCase() === guess.toLowerCase()
-    );
+//     const isValid = europeanCountries.some(
+//       country => country.toLowerCase() === guess.toLowerCase()
+//     );
 
-    if (isValid && !guesses.has(guess.toLowerCase())) {
-      guesses.add(guess.toLowerCase());
-      score++;
-      scoreDisplay.textContent = `Score: ${score}`;
+//     if (isValid && !guesses.has(guess.toLowerCase())) {
+//       guesses.add(guess.toLowerCase());
+//       score++;
+//       scoreDisplay.textContent = `Score: ${score}`;
 
-      const li = document.createElement("li");
-      li.textContent = guess;
-      guessList.appendChild(li);
-    }
-  }
-});
+//       const li = document.createElement("li");
+//       li.textContent = guess;
+//       guessList.appendChild(li);
+//     }
+//   }
+// });
 
 startBtn.addEventListener("click", startGame);

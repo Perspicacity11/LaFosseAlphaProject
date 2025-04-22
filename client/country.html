@@ -36,9 +36,13 @@
                 <div class="country-title">
                     <h3>Continent: Europe</h3>
                     <p>Can you name the countries in Europe</p>
+                    <button id="start-game">Start Game</button>
+                  <br><br>
                 </div>
                 <div class="form-box">
                   <span class="country-counter">Score: 45/0</span>
+                  <div id="score-display">Score: 0</div>
+                  <div id="timer">Time remaining: 60</div>
                   <form id="countryForm">
                     <div class="form-group">
                       <label for="userInput">Enter Country: </label>
@@ -46,6 +50,7 @@
                       <small id="userAlert" class="form-text text-muted"></small>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    <div id="final-score"></div>
                   </form>
                 </div>
             </div>

@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const logger = require('./logger');
 const path = require('path')
-const path = require("path")
+
 
 const userRouter = require('./server/routes/user_routes');
 const sessionRouter = require('./server/routes/session_routes');
