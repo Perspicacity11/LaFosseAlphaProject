@@ -1,16 +1,16 @@
 // signup.js
 
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("#signup-form");
+    const form = document.getElementById("signup-form");
   
     form.addEventListener("submit", async (e) => {
       e.preventDefault(); // prevent default form submission
       console.log("Form submitted"); // Debugging line
       console.log(e)
   
-      const username = document.getElementById("#inputName").value.trim();
-      const email = document.getElementById("#inputEmail1").value.trim();
-      const password = document.getElementById("#exampleInputPassword1").value;
+      const username = document.getElementById("inputName").value.trim();
+      const email = document.getElementById("inputEmail1").value.trim();
+      const password = document.getElementById("exampleInputPassword1").value;
   
       if (!username || !email || !password) {
         alert("Please fill in all fields.");
