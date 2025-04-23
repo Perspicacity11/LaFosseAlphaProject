@@ -1,7 +1,3 @@
-[build]
-  publish = "client"
-  command = "npm run build"
-
 [[redirects]]
   from = "/*"
   to = "/login.html"
