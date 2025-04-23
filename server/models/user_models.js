@@ -40,6 +40,8 @@ class User {
 }
 
   static async create(data) {
+    console.log("create user model")
+    console.log(data)
     const { username, email, password } = data;
     const response = await db.query('INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING *;', [username, email, password]);
     const userId = response.rows[0].id;
