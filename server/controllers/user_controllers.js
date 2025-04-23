@@ -21,6 +21,7 @@ async function show(req, res) {
 
 async function create(req, res) {
     try {
+        console.log("incoming signup payload", req.body);
         const data = req.body
         const user = await User.create(data)
         res.status(201).json(user)
