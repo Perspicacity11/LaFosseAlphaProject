@@ -1,4 +1,4 @@
-// signup.js
+import API_URL from './config';
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("signup-form");
