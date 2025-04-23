@@ -11,8 +11,8 @@
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              username : inputUsername.value,
-              password : inputPassword.value
+              username : inputUsername.value.trim(),
+              password : inputPassword.value.trim()
             })
           })
 
