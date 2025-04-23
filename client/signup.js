@@ -1,14 +1,16 @@
 // signup.js
 
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
+    const form = document.getElementById("#signup-form");
   
     form.addEventListener("submit", async (e) => {
       e.preventDefault(); // prevent default form submission
+      console.log("Form submitted"); // Debugging line
+      console.log(e)
   
-      const username = document.querySelector("#inputName").value.trim();
-      const email = document.querySelector("#inputEmail1").value.trim();
-      const password = document.querySelector("#exampleInputPassword1").value;
+      const username = document.getElementById("#inputName").value.trim();
+      const email = document.getElementById("#inputEmail1").value.trim();
+      const password = document.getElementById("#exampleInputPassword1").value;
   
       if (!username || !email || !password) {
         alert("Please fill in all fields.");
@@ -18,17 +20,20 @@ document.addEventListener("DOMContentLoaded", () => {
       const payload = {
         username,
         email,
-        password,
+        password
       };
+
+      console.log("Payload:", payload); // Debugging line
   
       try {
-        const res = await fetch("/users", {
+        const res = await fetch("/users/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(payload),
         });
+        console.log(payload)
   
         const data = await res.json();
   
