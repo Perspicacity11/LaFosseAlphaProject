@@ -18,7 +18,7 @@ async function login (req, res) {
     const data = req.body;
     try {
         // Use the username to retrieve all information all about the user
-        const user = await User.getOneById(data.id)
+        const user = await User.getOneByUsername(data.username)
         if (!user) { throw new Error("No user with this username")}
         const match = await bcrypt .compare(data.password, user.password)
 
