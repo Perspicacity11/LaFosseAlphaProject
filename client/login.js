@@ -1,27 +1,26 @@
+  const loginForm = document.getElementById("login-form")
   const inputUsername = document.getElementById("inputUsername")
   const inputPassword = document.getElementById("inputPassword")
-  const loginBtn = document.getElementById("loginButton")
-  const welcomeMsg = document.querySelector(".welcome-message")
 
-  loginBtn.addEventListener("click", async (e) => {
+  loginForm.addEventListener("submit", async (e) => {
     e.preventDefault()
 
+    const username = inputUsername.value.trim()
+    const password = inputPassword.value.trim()
+
     try{
-        const response = await fetch("/users/login", {
+        const response = await fetch("http://localhost:3000/users/login", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              username : inputUsername.value.trim(),
-              password : inputPassword.value.trim()
-            })
+            body: JSON.stringify({ username, password })
           })
 
           const data = await response.json()
 
           if (response.ok) {
               console.log("Login successful:", data);
-              window.location.href = "./index.html";
-              welcomeMsg.innerHTML = `Welcome ${username}`
+              window.location.href = "index.html";
+              
             } else {
               console.error("Login failed:", data.error);
               alert("Invalid login credentials!");
