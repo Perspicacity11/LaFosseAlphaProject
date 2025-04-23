@@ -6,6 +6,7 @@
     "test": "jest",
     "coverage": "jest --coverage",
     "dev": "nodemon -L index.js",
+    "start": "node index.js",
     "setup-db": "node ./server/database/setup.js"
   },
   "keywords": [],
