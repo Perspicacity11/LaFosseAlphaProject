@@ -1,4 +1,4 @@
-import API_URL from './config';
+// import API_URL from './config';
   
   const loginForm = document.getElementById("login-form")
   const inputUsername = document.getElementById("inputUsername")
@@ -11,7 +11,7 @@ import API_URL from './config';
     const password = inputPassword.value.trim()
 
     try{
-        const response = await fetch(`${API_URL}/users/login`, {
+        const response = await fetch('https://geogame-n2wb.onrender.com/users/login', {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ username, password })
