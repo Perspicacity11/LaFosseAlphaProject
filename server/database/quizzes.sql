@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS sessions;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id INT GENERATED ALWAYS AS IDENTITY,
@@ -37,23 +37,23 @@ CREATE TABLE sessions (
 
 INSERT INTO sessions (user_id, session_type, session_score)
 VALUES
-    (1, "country-guess", 50);
-    -- (1, 'flag-guess', 100),
-    -- (2, 'capital-guess', 80),
-    -- (2, 'country-guess', 120),
-    -- (3, 'flag-guess', 40),
-    -- (3, 'capital-guess', 80),
-    -- (4, 'country-guess', 90),
-    -- (4, 'flag-guess', 90),
-    -- (5, 'capital-guess', 30),
-    -- (5, 'country-guess', 60),
-    -- (6, 'flag-guess', 100),
-    -- (6, 'capital-guess', 150),
-    -- (7, 'country-guess', 120),
-    -- (7, 'flag-guess', 180),
-    -- (8, 'capital-guess', 110),
-    -- (8, 'country-guess', 165),
-    -- (9, 'flag-guess', 95),
-    -- (9, 'capital-guess', 125),
-    -- (10, 'country-guess', 70),
-    -- (10, 'flag-guess', 60);
+    (1, 'country-guess', 50),
+    (1, 'flag-guess', 100),
+    (2, 'capital-guess', 80),
+    (2, 'country-guess', 120),
+    (3, 'flag-guess', 40),
+    (3, 'capital-guess', 80),
+    (4, 'country-guess', 90),
+    (4, 'flag-guess', 90),
+    (5, 'capital-guess', 30),
+    (5, 'country-guess', 60),
+    (6, 'flag-guess', 100),
+    (6, 'capital-guess', 150),
+    (7, 'country-guess', 120),
+    (7, 'flag-guess', 180),
+    (8, 'capital-guess', 110),
+    (8, 'country-guess', 165),
+    (9, 'flag-guess', 95),
+    (9, 'capital-guess', 125),
+    (10, 'country-guess', 70),
+    (10, 'flag-guess', 60);
