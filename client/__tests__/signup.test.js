@@ -1,8 +1,3 @@
-// test("basic sanity check", () => {
-//     expect(1 + 1).toBe(2);
-//   });
-global.TextEncoder = require("util").TextEncoder;
-global.TextDecoder = require("util").TextDecoder;
 
 const fs = require("fs");
 const path = require("path");
