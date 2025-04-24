@@ -1,5 +1,6 @@
 const logoutBtn = document.getElementById("logoutBtn")
-const userAlert = document.querySelector("#userAlert")
+const welcome = document.querySelector('.welcome')
+const userName = localStorage.getItem("userName");
 
 logoutBtn.addEventListener("click", () =>{
     logout()
@@ -10,4 +11,5 @@ logoutBtn.addEventListener("click", () =>{
     window.location.href = "login.html";
   }
 
+  welcome.innerHTML = `Welcome ${userName}`
  

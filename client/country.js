@@ -4,9 +4,54 @@ const svg = document.querySelector(".svg");
 const countryCounter = document.querySelector(".country-counter")
 const userAlert = document.querySelector("#userAlert")
 const input = document.getElementById("userInput")
+const logoutBtn = document.getElementById("logoutBtn")
+const startBtn = document.getElementById("start-game");
+const timerEl = document.getElementById("timer");
+const finalScore = document.getElementById("final-score");
+const welcome = document.querySelector('.welcome')
+const userName = localStorage.getItem("userName");
 
 let counter = 0
 let countriesFound = []
+welcome.innerHTML = `Welcome ${userName}`
+
+
+async function getUsers(userName) {
+  try {
+    const response = await fetch('https://geogame-n2wb.onrender.com/users');
+    const data = await response.json();
+
+    if (response.ok) {
+      console.log("Data fetched successfully:", data);
+
+      const usernameToFind = userName; 
+      const userId = getUserIdByUsername(data, usernameToFind);
+      localStorage.setItem("userId", userId)
+      
+    } else {
+      console.error("Data retrival failed:", data.error);
+    }
+  } catch (err) {
+    console.log("Can't retrieve data", err);
+  }
+}
+
+function getUserIdByUsername(users, username) {
+  const user = users.find(user => user.username === username);
+  return user ? user.id : null; 
+}
+
+getUsers(userName);
+
+logoutBtn.addEventListener("click", () =>{
+    logout()
+  })
+  
+function logout() {
+    localStorage.clear();
+    window.location.href = "login.html";
+}
+
 
 countryInputForm.addEventListener("submit", (e) => {
     e.preventDefault()
@@ -72,20 +117,23 @@ function findCountry(e){
 }
 
 
-// ----------- UNDER THIS LINE IS ANA'S CODE ---------------
-
-const startBtn = document.getElementById("start-game");
-const timerEl = document.getElementById("timer");
-const finalScore = document.getElementById("final-score");
-
 let timer;
-const userId = 1;
+
 input.disabled = true;
 
 function startGame() {
+  const svgTexts = svg.querySelectorAll("text");
+  svgTexts.forEach(text => text.remove());
+
+  allPath.forEach(path => {
+    path.style.fill = "#fff";
+  });
+
+  counter = 0;
+  countriesFound = [];
   input.disabled = false;
   console.log('STARTING GAME')
-  let timeLeft = 60;
+  let timeLeft = 30;
   input.disabled = false;
   input.value = "";
   finalScore.textContent = "";
@@ -143,11 +191,11 @@ function endGame() {
   finalScore.textContent = `Final Score: ${counter}`;
 
   // Send result to backend
-  fetch("/sessions", {
+  fetch("https://geogame-n2wb.onrender.com/sessions", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      user_id: userId,
+      user_id: localStorage.getItem("userId"),
       session_score: counter,
       session_type: "country-guess"
     })

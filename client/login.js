@@ -17,11 +17,14 @@
             body: JSON.stringify({ username, password })
           })
 
+
           const data = await response.json()
 
           if (response.ok) {
               console.log("Login successful:", data);
-              window.location.href = "index.html";
+              localStorage.setItem("userName", data.username)
+              window.location.href = "home.html";
+              
               
             } else {
               console.error("Login failed:", data.error);

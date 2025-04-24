@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
         if (res.ok) {
           alert("Signup successful! You can now log in.");
-          window.location.href = "/login.html";
+          window.location.href = "login.html";
         } else {
           alert(data.error || "Something went wrong.");
         }
