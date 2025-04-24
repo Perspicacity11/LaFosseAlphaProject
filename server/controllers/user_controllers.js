@@ -25,12 +25,16 @@ async function show(req, res) {
 async function signup (req, res) {
     const data = req.body;
     // Generate a salt
-    const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUNDS))
-    // Use salt to hash the plaintext password and reassign to data object
-    data["password"] = await bcrypt.hash(data.password, salt)
-    // Pass data into the model
-    const result = await User.create(data)
-    res.status(201).json(result);
+    try {
+        const salt = await bcrypt.genSalt(parseInt(process.env.BCRYPT_SALT_ROUNDS))
+        // Use salt to hash the plaintext password and reassign to data object
+        data["password"] = await bcrypt.hash(data.password, salt)
+        // Pass data into the model
+        const result = await User.create(data)
+        res.status(201).json(result);
+    } catch(err) {
+        res.status(404).json({ error: err.message })
+    }
 };
 
 async function login (req, res) {

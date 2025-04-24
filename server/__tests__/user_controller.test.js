@@ -77,7 +77,7 @@ describe('User Controller', () => {
     });
 
     it('should handle creation error with status 404', async () => {
-      req.body = { username: 'fail' };
+      req.body = { username: 'fail', password: 'fail' };
       User.create.mockRejectedValue(new Error('Creation error'));
 
       await userController.signup(req, res);
