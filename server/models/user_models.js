@@ -31,7 +31,17 @@ class User {
     return new User(response.rows[0]);
   }
 
+  static async getOneByUsername(username) {
+    const response = await db.query("SELECT * FROM users WHERE username = $1", [username]);
+    if (response.rows.length != 1) {
+        throw new Error("Unable to locate user.");
+    }
+    return new User(response.rows[0]);
+}
+
   static async create(data) {
+    console.log("create user model")
+    console.log(data)
     const { username, email, password } = data;
     const response = await db.query('INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING *;', [username, email, password]);
     const userId = response.rows[0].id;

@@ -62,14 +62,14 @@ describe('User Controller', () => {
     });
   });
 
-  describe('create', () => {
-    it('should create a new user and return it with status 201', async () => {
+  describe('signup', () => {
+    it('should register a new user and return it with status 201', async () => {
       req.body = { username: 'new', email: 'new@example.com', password: 'secret' };
       const newUser = { id: 3, ...req.body };
 
       User.create.mockResolvedValue(newUser);
 
-      await userController.create(req, res);
+      await userController.signup(req, res);
 
       expect(User.create).toHaveBeenCalledWith(req.body);
       expect(res.status).toHaveBeenCalledWith(201);
@@ -80,7 +80,7 @@ describe('User Controller', () => {
       req.body = { username: 'fail' };
       User.create.mockRejectedValue(new Error('Creation error'));
 
-      await userController.create(req, res);
+      await userController.signup(req, res);
 
       expect(res.status).toHaveBeenCalledWith(404);
       expect(res.json).toHaveBeenCalledWith({ error: 'Creation error' });
