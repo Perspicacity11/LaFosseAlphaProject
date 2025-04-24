@@ -4,19 +4,9 @@ const svg = document.querySelector(".svg");
 const countryCounter = document.querySelector(".country-counter")
 const userAlert = document.querySelector("#userAlert")
 const input = document.getElementById("userInput")
-const logoutBtn = document.getElementById("logoutBtn")
 
 let counter = 0
 let countriesFound = []
-
-logoutBtn.addEventListener("click", () =>{
-  logout()
-})
-
-function logout() {
-  localStorage.clear();
-  window.location.href = "login.html";
-}
 
 countryInputForm.addEventListener("submit", (e) => {
     e.preventDefault()
