@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(payload)
   
         const data = await res.json();
+        console.log(res)
   
         if (res.ok) {
           alert("Signup successful! You can now log in.");
