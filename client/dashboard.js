@@ -20,8 +20,6 @@ async function getUsers(userName) {
     const data = await response.json();
 
     if (response.ok) {
-      console.log("Data fetched successfully:", data);
-
       const usernameToFind = userName; 
       const userId = getUserIdByUsername(data, usernameToFind);
       localStorage.setItem("userId", userId)
