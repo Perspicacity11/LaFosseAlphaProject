@@ -1,8 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-const fetch = require('jest-fetch-mock').enableMocks(); // this mocks fetch globally in this file
-console.log('Fetch is:', typeof fetch);
+//const fetch = require('jest-fetch-mock').enableMocks(); // this mocks fetch globally in this file
+console.log('fetch.resetMocks is:', typeof fetch.resetMocks); // should log: "function"
+
 
 
 describe('Signup Form UI Tests', () => {
