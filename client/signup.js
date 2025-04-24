@@ -1,4 +1,4 @@
-import API_URL from './config';
+// import API_URL from './config';
 
 document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("signup-form");
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Payload:", payload); // Debugging line
   
       try {
-        const res = await fetch(`${API_URL}/users/signup`, {
+        const res = await fetch('https://geogame-n2wb.onrender.com/users/signup', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
