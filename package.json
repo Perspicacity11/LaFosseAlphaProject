@@ -1,10 +1,10 @@
 {
   "name": "alphaproject",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:client": "jest --config=client/jest.config.js --coverage",
     "coverage": "jest --coverage",
     "dev": "nodemon -L index.js",
     "start": "node index.js",
