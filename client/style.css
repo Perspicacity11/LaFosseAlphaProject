@@ -266,3 +266,16 @@ section{
     max-width: 1000px;
     height: 620px;
 }
+
+.dashboard{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #007bff;
+    min-height: 100vh;
+}
+
+.dashboard .table{
+    margin-top: 5rem;
+    background-color: #E5E4E2;
+}

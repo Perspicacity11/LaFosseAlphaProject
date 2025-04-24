@@ -18,10 +18,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="./home.html">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="home#game-options">Play Game</a>
+              <a class="nav-link" href="home.html#game-options">Play Game</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./dashboard.html">Dashboard</a>
@@ -33,7 +33,20 @@
           <h4 class="welcome"></h4>
         </div>
       </nav>
-      <section class="home" id="home">
+      <section class="dashboard" id="dashboard">
+
+          <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Username</th>
+                <th scope="col">Total Score Per Session</th>
+              </tr>
+            </thead>
+            <tbody id="session-table">
+              
+            </tbody>
+          </table>
       </section>
 
  </div>

@@ -55,7 +55,7 @@ function logout() {
 
 countryInputForm.addEventListener("submit", (e) => {
     e.preventDefault()
-    if(countriesFound.includes(e.target.userInput.value)){
+    if(countriesFound.includes(e.target.userInput.value.toLowerCase())){
         userAlert.style.color = "#dc3545"
         userAlert.innerHTML = `${e.target.userInput.value} has already been entered`
 
