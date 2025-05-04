@@ -74,7 +74,6 @@ async function getSessionDetails() {
           const sessionScoreCell = document.createElement('td');
           sessionScoreCell.textContent = session.session_score;
 
-          // Append the cells to the row
           row.appendChild(userIdCell);
           row.appendChild(sessionTypeCell);
           row.appendChild(sessionScoreCell);

@@ -1,5 +1,3 @@
-// import API_URL from './config';
-  
   const loginForm = document.getElementById("login-form")
   const inputUsername = document.getElementById("inputUsername")
   const inputPassword = document.getElementById("inputPassword")
@@ -17,11 +15,9 @@
             body: JSON.stringify({ username, password })
           })
 
-
           const data = await response.json()
 
           if (response.ok) {
-              console.log("Login successful:", data);
               let user = localStorage.setItem("userName", data.username)
               getUsers(user)
               window.location.href = "home.html";
@@ -31,7 +27,7 @@
               console.error("Login failed:", data.error);
               alert("Invalid login credentials!");
             }
-        }catch(err){
+        } catch(err){
             console.log("Can't retrieve data")
         }
         
@@ -43,8 +39,6 @@
       const data = await response.json();
   
       if (response.ok) {
-        console.log("Data fetched successfully:", data);
-  
         const usernameToFind = userName; 
         const userId = getUserIdByUsername(data, usernameToFind);
         localStorage.setItem("userId", userId)
