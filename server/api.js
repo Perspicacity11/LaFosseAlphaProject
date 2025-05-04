@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const logger = require('./logger');
+const logger = require('../logger');
 const path = require('path')
 const allowedOrigins = ['https://geo-nius.netlify.app', 'http://localhost:3000'];
 
 
-const userRouter = require('./server/routes/user_routes');
-const sessionRouter = require('./server/routes/session_routes');
+const userRouter = require('./routes/user_routes');
+const sessionRouter = require('./routes/session_routes');
 
 const app = express()
 
