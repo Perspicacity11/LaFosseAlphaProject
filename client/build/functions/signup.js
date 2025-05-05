@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log("Payload:", payload); // Debugging line
   
       try {
-        const res = await fetch('https://geogame-n2wb.onrender.com/users/signup', {
+        const res = await fetch('https://geo-nius-lafosse-alpha-project.onrender.com/users/signup', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

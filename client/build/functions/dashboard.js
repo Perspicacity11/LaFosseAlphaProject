@@ -16,7 +16,7 @@ function logout() {
 
 async function getUsers(userName) {
   try {
-    const response = await fetch('https://geogame-n2wb.onrender.com/users');
+    const response = await fetch('https://geo-nius-lafosse-alpha-project.onrender.com/users');
     const data = await response.json();
 
     if (response.ok) {
@@ -41,7 +41,7 @@ getUsers(userName)
 
 async function getSessionDetails() {
     try {
-      const response = await fetch('https://geogame-n2wb.onrender.com/sessions');
+      const response = await fetch('https://geo-nius-lafosse-alpha-project.onrender.com/sessions');
       const data = await response.json();
   
       if (response.ok) {

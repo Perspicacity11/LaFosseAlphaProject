@@ -18,7 +18,7 @@ welcome.innerHTML = `Welcome ${userName}`
 
 async function getUsers(userName) {
   try {
-    const response = await fetch('https://geogame-n2wb.onrender.com/users');
+    const response = await fetch('https://geo-nius-lafosse-alpha-project.onrender.com/users');
     const data = await response.json();
 
     if (response.ok) {
@@ -191,7 +191,7 @@ function endGame() {
   finalScore.textContent = `Final Score: ${counter}`;
 
   // Send result to backend
-  fetch("https://geogame-n2wb.onrender.com/sessions", {
+  fetch("https://geo-nius-lafosse-alpha-project.onrender.com/sessions", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
