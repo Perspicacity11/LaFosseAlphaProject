@@ -6,13 +6,14 @@
     "test": "jest",
     "test:client": "jest --config=client/jest.config.js --coverage",
     "coverage": "jest --coverage",
-    "dev": "nodemon -L index.js",
-    "start": "node index.js",
-    "setup-db": "node ./server/database/setup.js"
+    "dev": "nodemon -L ../server/index.js",
+    "start": "node ../server/index.js",
+    "setup-db": "node ../server/database/setup.js"
   },
   "engines": {
     "node": ">=16.0.0"
   },
+  "proxy": "http://localhost:3000",
   "keywords": [],
   "author": "",
   "license": "ISC",

@@ -38,7 +38,7 @@ section{
 }
 
 .main{
-    background-image: url("./assets/earth-reducedSize.jpg");
+    background-image: url("../assets/earth-reducedSize.jpg");
     background-repeat:no-repeat;
     background-size:cover;
     min-height: 100vh;
@@ -136,7 +136,7 @@ section{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-image: url(./assets/map-1662957_1280.jpg);
+    background-image: url("../assets/map-1662957_1280.jpg");
     background-repeat:no-repeat;
     background-size:cover;
     max-width: 100%;
@@ -214,7 +214,7 @@ section{
 }
 
 .main-country{
-    background-image: url(./assets/blue-background.jpg);
+    background-image: url("../assets/blue-background.jpg");
     min-height: 100vh;
 }
 

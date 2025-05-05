@@ -1,7 +1,17 @@
-FROM node:8.16.1-alpine
+FROM node:16-alpine
+
 WORKDIR /app
-COPY . /app
+
+COPY package.json package-lock.json ./
 RUN npm i
-ENV PORT=3000
-EXPOSE 3000
-CMD node index.js
+
+COPY . .
+
+RUN npm run build
+
+# Uses a lightweight web server to serve the static files; UNSURE ABOUT THIS!!!
+FROM nginx:alpine
+COPY --from=0 /app/build /usr/share/nginx/html
+
+EXPOSE 80
+CMD nginx -g daemon off

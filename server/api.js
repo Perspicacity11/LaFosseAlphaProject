@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const logger = require('../logger');
+const logger = require('./logger');
 const path = require('path')
 const allowedOrigins = ['https://geo-nius.netlify.app', 'http://localhost:3000'];
 
@@ -27,11 +27,12 @@ app.use(logger)
 app.use('/users', userRouter);
 app.use('/sessions', sessionRouter);
 
-app.use(express.static(path.join(__dirname, "client")))
+app.use(express.static(path.join(__dirname, "../client/build")))
 
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "login.html"));
-})
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "login.html"));
+// })
+
 
 app.get("/", (req, res) => {
   res.status(200).json({
@@ -39,5 +40,9 @@ app.get("/", (req, res) => {
     description: "Geography games and quizzes to make learning fun!",
   })
 })
+
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../client/build/login.html'));
+// });
 
 module.exports = app;
