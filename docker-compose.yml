@@ -1,4 +1,15 @@
 services:
   client:
+    build: ./client
+    ports:
+      - "80:80" # Exposes Nginx on port 80
+    depends_on:
+      - server
 
   server:
+    build: ./server
+    command: npm start
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000

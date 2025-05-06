@@ -6,9 +6,7 @@
     "test": "jest",
     "test:client": "jest --config=client/jest.config.js --coverage",
     "coverage": "jest --coverage",
-    "build": "cp -r build/. dist/",
-    "prebuild": "mkdir -p dist",
-    "start": "npx serve -s dist",
+    "build": "echo 'Assets already built - nothing to do'",
     "dev": "npx serve -s build"
   },
   "engines": {
