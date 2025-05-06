@@ -1,8 +1,8 @@
-FROM node:8.16.1-alpine
+FROM node:20-alpine
 WORKDIR /app
-COPY . /app
-COPY ../client/build ./client/build
-RUN npm i
+COPY package*.json ./
+RUN npm install
+COPY . .
 ENV PORT=3000
 EXPOSE 3000
 CMD node index.js

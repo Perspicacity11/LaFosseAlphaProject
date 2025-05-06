@@ -6,9 +6,10 @@
     "test": "jest",
     "test:client": "jest --config=client/jest.config.js --coverage",
     "coverage": "jest --coverage",
-    "dev": "nodemon -L ../server/index.js",
-    "start": "node ../server/index.js",
-    "setup-db": "node ../server/database/setup.js"
+    "build": "cp -r build/. dist/",
+    "prebuild": "mkdir -p dist",
+    "start": "npx serve -s dist",
+    "dev": "npx serve -s build"
   },
   "engines": {
     "node": ">=16.0.0"

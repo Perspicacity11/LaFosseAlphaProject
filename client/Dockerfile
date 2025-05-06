@@ -1,10 +1,4 @@
-FROM node:16-alpine
-
+FROM node:20-alpine
 WORKDIR /app
-
-COPY package.json package-lock.json ./
-RUN npm i
-
-COPY . .
-
-RUN npm run build
+COPY build/ ./build/
+CMD ["echo", "Client assets container - use as a volume source"]
