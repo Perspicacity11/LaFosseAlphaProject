@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   
     form.addEventListener("submit", async (e) => {
       e.preventDefault(); // prevent default form submission
-      console.log("Form submitted"); // Debugging line
-      console.log(e)
   
       const username = document.getElementById("inputName").value.trim();
       const email = document.getElementById("inputEmail1").value.trim();
@@ -22,8 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
         email,
         password
       };
-
-      console.log("Payload:", payload); // Debugging line
   
       try {
         const res = await fetch('https://geo-nius-lafosse-alpha-project.onrender.com/users/signup', {
@@ -33,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           body: JSON.stringify(payload),
         });
-        // console.log(payload)
   
         const data = await res.json();
         console.log(res)

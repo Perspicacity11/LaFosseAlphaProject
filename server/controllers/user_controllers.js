@@ -31,10 +31,8 @@ async function signup (req, res) {
         data["password"] = await bcrypt.hash(data.password, salt)
         // Pass data into the model
         const result = await User.create(data)
-        console.log("Result from signup, model: " + result)
         res.status(201).json(result);
     } catch(err) {
-        console.error('Error during signup, controller:', err);
         res.status(400).json({ error: err.message })
     }
 };
