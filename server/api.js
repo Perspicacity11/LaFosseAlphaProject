@@ -9,7 +9,14 @@ const sessionRouter = require('./routes/session_routes');
 const app = express()
 
 app.use(cors({
-  origin: ['https://geo-nius.netlify.app/'],
+  origin: (origin, callback) => {
+    const allowedOrigins = ['https://geo-nius.netlify.app', 'http://localhost:3000'];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true); // Allow the request
+    } else {
+      callback(new Error('Not allowed by CORS')); // Block the request
+    }
+  },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
