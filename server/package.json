@@ -8,7 +8,7 @@
     "coverage": "jest --coverage",
     "dev": "nodemon -L index.js",
     "start": "node index.js",
-    "setup-db": "node ./server/database/setup.js"
+    "setup-db": "node ./database/setup.js"
   },
   "engines": {
     "node": ">=16.0.0"

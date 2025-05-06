@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
           body: JSON.stringify(payload),
         });
-        console.log(payload)
+        // console.log(payload)
   
         const data = await res.json();
         console.log(res)

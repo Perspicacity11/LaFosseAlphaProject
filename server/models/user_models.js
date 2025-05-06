@@ -14,6 +14,7 @@ class User {
 
   static async getAll() {
     const response = await db.query("SELECT * FROM users;");
+    console.log("Response from DB: " + response.rows)
     if (response.rows.length === 0) {
       throw new Error("No users available.")
     }
@@ -44,6 +45,7 @@ class User {
     console.log(data)
     const { username, email, password } = data;
     const response = await db.query('INSERT INTO users (username, email, password) VALUES ($1, $2, $3) RETURNING *;', [username, email, password]);
+    console.log('DB response: ' + response)
     const userId = response.rows[0].id;
     const newUser = await User.getOneById(userId);
     return newUser;
