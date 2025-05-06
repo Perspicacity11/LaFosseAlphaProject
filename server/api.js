@@ -10,7 +10,7 @@ const app = express()
 
 app.use(cors({
   origin: (origin, callback) => {
-    const allowedOrigins = ['https://geo-nius.netlify.app', 'http://localhost:3000'];
+    const allowedOrigins = ['https://geo-nius.netlify.app', 'http://localhost:80', 'http://localhost'];
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true); // Allow the request
     } else {
